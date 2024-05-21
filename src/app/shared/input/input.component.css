@@ -1,0 +1,42 @@
+.field label {
+  display: block;
+  color: #323236;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.field input {
+  margin-top: 8px;
+  display: block;
+  padding: 12px 16px;
+  border: 1px solid #8e8f96;
+  border-radius: 8px;
+  width: 100%;
+  font-family: "Manrope";
+}
+
+.field input::placeholder {
+  color: #8e8f96;
+  font-size: 16px;
+  font-family: "Manrope";
+}
+
+.field input:focus {
+  border-color: #18181a;
+}
+
+.input-error {
+  border-color: #e14a41 !important;
+}
+
+.input-success {
+  border-color: #44b548 !important;
+}
+
+.msg {
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  color: #18181a;
+}

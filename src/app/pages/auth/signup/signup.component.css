@@ -1,0 +1,197 @@
+:host {
+  margin-left: 180px;
+  width: 100%;
+}
+
+.signup {
+  width: 100%;
+}
+
+.signup-header-back {
+  display: flex;
+  align-items: center;
+}
+
+.signup-header-back-text {
+  color: #8e8f96;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.signup-header {
+  display: flex;
+  width: 100%;
+  margin-left: 80px;
+  gap: 600px;
+}
+
+.signup-header-login {
+  color: #8e8f96;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.signup-header-login a {
+  color: #1c8113;
+  margin-left: 8px;
+}
+
+.signup-form {
+  padding: 80px 136px 0px 136px;
+}
+
+.signup-form-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.signup-form-subtitle {
+  margin-top: 8px;
+  color: #8e8f96;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.signup-form-field-genders {
+  display: flex;
+}
+
+.signup-form-field-label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #323236;
+  margin-bottom: 16px;
+}
+
+.signup-form-field-gender {
+  width: 200px;
+  padding: 16px 26px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid #b6b6bc;
+}
+
+.signup-form-field-gender-border {
+  border-color: #1c8113;
+}
+
+.signup-form-field-gender + .signup-form-field-gender {
+  margin-left: 24px;
+}
+
+.signup-form-field-gender [type="radio"]:checked,
+.signup-form-field-gender [type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.signup-form-field-gender
+  [type="radio"]:checked
+  + .signup-form-field-gender-label,
+.signup-form-field-gender
+  [type="radio"]:not(:checked)
+  + .signup-form-field-gender-label {
+  position: relative;
+  padding: 3px 0 0 40px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.signup-form-field-gender-label:before,
+.signup-form-field-gender-label:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.signup-form-field-gender
+  [type="radio"]:checked
+  + .signup-form-field-gender-label:before,
+.signup-form-field-gender
+  [type="radio"]:not(:checked)
+  + .signup-form-field-gender-label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background: #fff;
+}
+
+.signup-form-field-gender
+  [type="radio"]:checked
+  + .signup-form-field-gender-label:after,
+.signup-form-field-gender
+  [type="radio"]:not(:checked)
+  + .signup-form-field-gender-label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #1c8113;
+  position: absolute;
+  top: 6px;
+  left: 6.5px;
+  border-radius: 100%;
+  transition: all 0.2s ease;
+}
+
+.signup-form-field-gender
+  [type="radio"]:not(:checked)
+  + .signup-form-field-gender-label:before {
+  border: 1px solid #8e8f96;
+}
+
+.signup-form-field-gender
+  [type="radio"]:checked
+  + .signup-form-field-gender-label:before {
+  border: 1px solid #323236;
+}
+
+.signup-form-field-gender
+  [type="radio"]:not(:checked)
+  + .signup-form-field-gender-label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.signup-form-field-gender
+  [type="radio"]:checked
+  + .signup-form-field-gender-label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.signup-form-field-gender-label {
+  font-size: 18px;
+  font-weight: 400;
+  color: #18181a;
+}
+
+.signup-form-fields {
+  display: grid;
+  grid-template-columns: 312px 312px;
+  grid-gap: 24px;
+}
+
+.signup-form-text-inputs {
+  margin-top: 34px;
+}
+
+.signup-form-fields + .signup-form-fields {
+  margin-top: 25px;
+}
+
+.sign-up-form-sbmt {
+  margin-top: 32px;
+  max-width: 121px;
+}
+
+.sign-up-form-sbmt .btn {
+  border-radius: 8px;
+}

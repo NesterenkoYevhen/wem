@@ -1,0 +1,176 @@
+.email {
+  height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  display: flex;
+}
+
+.email-left {
+  height: 100vh;
+  background-color: #323236;
+  width: 21vw; /* 260/1440 */
+}
+
+.email-logo-container {
+  width: 100%;
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-logo-title {
+  color: #d2d2d8;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.email-menu {
+  margin-top: 64px;
+}
+
+.email-menu-item {
+  padding: 8px 32px;
+}
+
+.email-menu-item-link {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.email-menu-item-icon-fill path {
+  fill: #f9f9f9;
+}
+
+.email-menu-item-icon-stroke path {
+  stroke: #f9f9f9;
+}
+
+.email-menu-item-icon-fill-stroke path {
+  fill: #f9f9f9;
+  stroke: #f9f9f9;
+}
+
+.email-menu-item-text {
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+  color: #f9f9f9;
+}
+
+.email-menu-item-active {
+  background-color: #f9f9f9;
+}
+
+.email-menu-item-active .email-menu-item-text {
+  color: #18181a;
+}
+
+.email-menu-item-active .email-menu-item-icon-fill path {
+  fill: #18181a;
+}
+
+.email-menu-item-active .email-menu-item-icon-stroke path {
+  stroke: #18181a;
+}
+
+.email-menu-item-active .email-menu-item-icon-fill-stroke path {
+  fill: #18181a;
+  stroke: #18181a;
+}
+
+.email-menu-item + .email-menu-item {
+  margin-top: 16px;
+}
+
+.email-new-container {
+  margin-top: 64px;
+  padding: 0 43px;
+}
+
+.email-new-container .btn {
+  border-radius: 8px;
+  background-color: #1c8113;
+}
+
+.email-right {
+  width: 100%;
+  padding: 24px;
+}
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-header-search {
+  padding: 8px 20px;
+  width: 29.930556vw; /* 431/1440 */
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.email-header-search label {
+  height: 24px;
+}
+
+.email-header-search input {
+  background-color: transparent;
+  color: #18181a;
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.email-header-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.email-header-menu-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.email-header-menu-user {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.email-header-dropdown {
+  position: relative;
+}
+
+.email-header-dropdown-content {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 10vw;
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.email-container {
+  margin-top: 60px;
+}
+
+.email-header-dropdown-content button {
+  font-family: Manrope;
+  font-size: 16px;
+}

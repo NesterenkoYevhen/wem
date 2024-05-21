@@ -1,0 +1,30 @@
+<div class="acordion">
+  <ng-container *ngFor="let item of items; let i = index">
+    <div
+      [ngClass]="{ 'acordion-item-active': i === openedItemIndex }"
+      class="accordion-item"
+    >
+      <div
+        [ngClass]="{ 'acordion-header-active': i === openedItemIndex }"
+        class="acordion-header"
+        (click)="onClick(i)"
+      >
+        <div class="acordion-header-title">
+          {{ item.title }}
+        </div>
+        <div class="acordion-header-arrow">
+          <img
+            src="../../../assets/icons/accordion-arrow-icon.svg"
+            alt="accordion-arrow-icon"
+          />
+        </div>
+      </div>
+      <div
+        [ngClass]="{ 'acordion-content-active': i === openedItemIndex }"
+        class="acordion-content"
+      >
+        <p>{{ item.content }}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,101 @@
+<div class="new">
+  <div class="new-header">
+    <button class="new-header-back" routerLink="../">
+      <img
+        class="new-header-back-img"
+        src="../../../../assets/icons/arrow-left.svg"
+        alt="arrow-left"
+      />
+      <div class="new-header-back-text">New message</div>
+    </button>
+  </div>
+  <form class="new-form" [formGroup]="newLetterForm" (ngSubmit)="onSubmit()">
+    <fieldset class="new-form-field">
+      <label class="new-form-field-label" for="from">From:</label>
+      <input
+        id="from"
+        class="new-form-field-text"
+        type="text"
+        readonly
+        [value]="user?.email"
+      />
+    </fieldset>
+    <fieldset class="new-form-field">
+      <label class="new-form-field-label" for="to">To:</label>
+      <input
+        id="to"
+        class="new-form-field-text"
+        type="text"
+        [formControl]="newLetterForm.get('to')"
+      />
+    </fieldset>
+    <fieldset class="new-form-field">
+      <label class="new-form-field-label" for="сс">Сс:</label>
+      <input
+        id="сс"
+        class="new-form-field-text"
+        type="text"
+        [formControl]="newLetterForm.get('cc')"
+      />
+    </fieldset>
+    <fieldset class="new-form-field new-form-field-last">
+      <label class="new-form-field-label" for="subject">Subject:</label>
+      <input
+        id="subject"
+        class="new-form-field-text"
+        type="text"
+        [formControl]="newLetterForm.get('subject')"
+      />
+    </fieldset>
+    <fieldset>
+      <textarea
+        class="new-form-field-textarea"
+        placeholder="Write your message..."
+        [formControl]="newLetterForm.get('msg')"
+      ></textarea>
+    </fieldset>
+    <div class="new-form-footer">
+      <div class="new-form-footer-submit">
+        <button
+          class="btn btn__primary--black"
+          [disabled]="newLetterForm.invalid"
+        >
+          <img
+            src="../../../../assets/icons/new/send-icon.svg"
+            alt="send-icon"
+          />
+          Send
+        </button>
+      </div>
+      <div class="new-form-footer-controllers">
+        <button>
+          <img
+            src="../../../../assets/icons/new/text-icon.svg"
+            alt="text-icon"
+          />
+        </button>
+        <button>
+          <img
+            src="../../../../assets/icons/new/file-icon.svg"
+            alt="file-icon"
+          />
+        </button>
+        <button>
+          <img src="../../../../assets/icons/new/img-icon.svg" alt="img-icon" />
+        </button>
+        <button>
+          <img
+            src="../../../../assets/icons/new/link-icon.svg"
+            alt="link-icon"
+          />
+        </button>
+        <button>
+          <img
+            src="../../../../assets/icons/new/more-icon.svg"
+            alt="more-icon"
+          />
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

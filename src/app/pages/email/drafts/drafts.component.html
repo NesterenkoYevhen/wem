@@ -1,0 +1,165 @@
+<div class="inbox">
+  <div class="inbox-emails">
+    <div class="inbox-emails-info">
+      <div class="inbox-emails-info-left">
+        <h3 class="inbox-emails-info-title">Drafts</h3>
+        <p class="inbox-emails-info-description">
+          {{ drafts.length }} message(s)
+        </p>
+      </div>
+    </div>
+    <ul class="inbox-emails-list">
+      <ng-container *ngFor="let letter of drafts">
+        <li class="inbox-emails-list-item" (click)="onSetActiveLetter(letter)">
+          <i class="fa-solid fa-envelope-open"></i>
+          <div class="inbox-emails-list-item-content">
+            <div class="inbox-emails-list-item-header">
+              <h4 class="inbox-emails-list-item-from">
+                {{ letter.to ? letter.to : "(No recepient)" }}
+              </h4>
+              <div class="inbox-emails-list-item-date">
+                {{ letter.date | date : "MMM d" }}
+              </div>
+            </div>
+            <h5 class="inbox-emails-list-item-subject">
+              {{ letter.subject ? letter.subject : "(No subject)" }}
+            </h5>
+            <p class="inbox-emails-list-item-msg">
+              {{ letter.msg ? letter.msg.substr(0, 50) + " ..." : "(No msg)" }}
+            </p>
+          </div>
+        </li></ng-container
+      >
+    </ul>
+  </div>
+  <div class="inbox-email">
+    <div class="letter" *ngIf="activeLetter; else emptyLetter">
+      <div class="letter-nav">
+        <div class="letter-nav-left">
+          <button (click)="onCloseActiveLetter()">
+            <img src="../../../../assets/icons/letter/1.svg" alt="cross" />
+          </button>
+        </div>
+        <div class="letter-nav-right">
+          <div class="letter-nav-right-block">
+            <button>
+              <img src="../../../../assets/icons/letter/2.svg" alt="arrow-1" />
+            </button>
+            <button class="letter-nav-btn-borders">
+              <img src="../../../../assets/icons/letter/3.svg" alt="arrow-2" />
+            </button>
+            <button>
+              <img src="../../../../assets/icons/letter/4.svg" alt="arrow-3" />
+            </button>
+          </div>
+          <div class="letter-nav-right-block">
+            <button>
+              <img
+                src="../../../../assets/icons/letter/5.svg"
+                alt="archive-icon"
+              />
+            </button>
+            <button
+              class="letter-nav-btn-borders"
+              (click)="onDeleteLetter(activeLetter.id)"
+            >
+              <img
+                src="../../../../assets/icons/letter/6.svg"
+                alt="trash-icon"
+              />
+            </button>
+            <button>
+              <img
+                src="../../../../assets/icons/letter/7.svg"
+                alt="star-icon"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="letter-header">
+        <div class="letter-header-left">
+          <div class="letter-header-left-block">
+            <img src="../../../../assets/male.jpg" alt="male" />
+          </div>
+          <div class="letter-header-left-block">
+            <h4 class="letter-sender">{{ activeLetter.from }}</h4>
+            <h5 class="letter-subject">{{ activeLetter.subject }}</h5>
+            <h6 class="letter-recipient-date">To: {{ activeLetter.to }}</h6>
+          </div>
+        </div>
+        <div class="letter-header-right">
+          <h6 class="letter-recipient-date">
+            {{ activeLetter.date | date : "dd/MM/y" }} at
+            {{ activeLetter.date | date : "h:mm a" }}
+          </h6>
+          <div class="letter-header-btns">
+            <button>
+              <img
+                src="../../../../assets/icons/letter/8.svg"
+                alt="star-icon"
+              />
+            </button>
+            <button>
+              <img
+                src="../../../../assets/icons/letter/9.svg"
+                alt="star-icon"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="letter-content">
+        <p class="letter-content-text">
+          {{ activeLetter.msg }}
+          <!-- Hello, David! I’m glad to inform that we are interested in hiring you
+          for a DevOps position at SomeCom. <br /><br />
+          You can look forward to joining a dynamic team that thrives on
+          innovation and collaboration. Our projects span across multiple
+          technologies and platforms, offering you the perfect playground to
+          apply and expand your skills.<br /><br />
+          Before we proceed, we'd like to discuss your availability for an
+          interview where we can talk more about your experiences, expectations,
+          and what we have to offer. Please let us know your preferred time
+          slots within the next week.<br /><br />
+          Additionally, should you have any preliminary questions or need
+          further details about the role, feel free to reach out. We believe
+          your expertise in automation, cloud infrastructure, and system
+          architecture makes you an ideal fit for our team.<br /><br />
+          Looking forward to your response and hopefully, to welcoming you
+          aboard.<br /><br />
+          Best regards,<br />
+          Ann Smith -->
+        </p>
+        <div class="letter-content-attachments">
+          <div class="letter-content-attachment">
+            <button>
+              <img
+                src="../../../../assets/icons/letter/10.svg"
+                alt="pdf-icon"
+              />
+            </button>
+            <span>offer</span>
+          </div>
+          <div class="letter-content-attachment">
+            <button>
+              <img
+                src="../../../../assets/icons/letter/10.svg"
+                alt="pdf-icon"
+              />
+            </button>
+            <span>NDA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #emptyLetter>
+      <div class="inbox-email-empty">
+        <h3 class="inbox-email-empty-title">No opened message</h3>
+        <p class="inbox-email-empty-description">
+          Open a letter to see the content
+        </p>
+      </div>
+    </ng-template>
+  </div>
+</div>

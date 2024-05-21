@@ -1,0 +1,114 @@
+<div class="signup">
+  <div class="signup-header">
+    <button class="signup-header-back" routerLink="../">
+      <img
+        class="signup-header-back-img"
+        src="../../../../assets/chevron-back.svg"
+        alt="chevron-back"
+      />
+      <div class="signup-header-back-text">Back</div>
+    </button>
+    <div class="signup-header-login">
+      Already have an account?
+      <a routerLink="/auth">Log in</a>
+    </div>
+  </div>
+  <form class="signup-form" (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+    <h2 class="signup-form-title">Sign up</h2>
+    <h3 class="signup-form-subtitle">Have an account? Log in</h3>
+    <fieldset class="signup-form-field">
+      <h4 class="signup-form-field-label">Indicate your gender</h4>
+      <div class="signup-form-field-genders">
+        <div
+          class="signup-form-field-gender"
+          [ngClass]="{
+            'signup-form-field-gender-border': gender === 'FEMALE'
+          }"
+        >
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="FEMALE"
+              [checked]="gender === 'FEMALE'"
+              (change)="setGender($event.target.value)"
+            />
+            <div class="signup-form-field-gender-label">
+              <span>Female</span>
+            </div>
+          </label>
+        </div>
+        <div
+          class="signup-form-field-gender"
+          [ngClass]="{
+            'signup-form-field-gender-border': gender === 'MALE'
+          }"
+        >
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              id="male"
+              value="MALE"
+              [checked]="gender === 'MALE'"
+              (change)="setGender($event.target.value)"
+            />
+            <div class="signup-form-field-gender-label">
+              <span>Male</span>
+            </div>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="signup-form-text-inputs">
+      <div class="signup-form-fields">
+        <fieldset class="signup-form-field">
+          <app-input
+            inputType="text"
+            label="Full name"
+            [control]="signupForm.get('fullname')"
+            placeholder="Ann Smith"
+          ></app-input>
+        </fieldset>
+        <fieldset class="signup-form-field">
+          <app-input
+            inputType="text"
+            label="Username for email @wem.com"
+            [control]="signupForm.get('email')"
+            placeholder="yevhen24"
+            inputType="email"
+          ></app-input>
+        </fieldset>
+      </div>
+      <div class="signup-form-fields">
+        <fieldset class="signup-form-field">
+          <app-input
+            inputType="password"
+            label="Create a password"
+            [control]="signupForm.get('password')"
+            placeholder="Enter a password"
+          ></app-input>
+        </fieldset>
+        <fieldset class="signup-form-field">
+          <app-input
+            inputType="password"
+            label="Repeat a password"
+            [control]="signupForm.get('passwordConfirmation')"
+            placeholder="Enter a password"
+            [passwordNotMatching]="signupForm.hasError('passwordsDontMatch')"
+          ></app-input>
+        </fieldset>
+      </div>
+    </div>
+    <div class="sign-up-form-sbmt">
+      <button
+        type="submit"
+        [disabled]="signupForm.invalid"
+        class="btn btn__primary btn__primary--green"
+      >
+        Sign up
+      </button>
+    </div>
+  </form>
+</div>

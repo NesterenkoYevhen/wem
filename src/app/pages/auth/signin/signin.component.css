@@ -1,0 +1,76 @@
+:host {
+  margin-left: 180px;
+  width: 100%;
+}
+
+.signin {
+  width: 100%;
+}
+
+.signin-header-back {
+  display: flex;
+  align-items: center;
+}
+
+.signin-header-back-text {
+  color: #8e8f96;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.signin-header {
+  display: flex;
+  width: 100%;
+  margin-left: 80px;
+  gap: 600px;
+}
+
+.signin-header-login {
+  color: #8e8f96;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.signin-header-login a {
+  color: #1c8113;
+  margin-left: 8px;
+}
+
+.signin-form {
+  padding: 80px 136px 0px 250px;
+}
+
+.signin-form-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.signin-form-subtitle {
+  margin-top: 8px;
+  color: #8e8f96;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.signin-form-fields {
+  width: 320px;
+}
+
+.signin-form-text-inputs {
+  margin-top: 34px;
+}
+
+.signin-form-fields + .signin-form-fields {
+  margin-top: 25px;
+}
+
+.sign-up-form-sbmt {
+  margin-top: 32px;
+  max-width: 121px;
+}
+
+.sign-up-form-sbmt .btn {
+  border-radius: 8px;
+}

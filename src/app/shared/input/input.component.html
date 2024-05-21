@@ -1,0 +1,52 @@
+<div class="field">
+  <label>{{ label }}</label>
+
+  <input
+    *ngIf="controlType === 'input'"
+    [type]="inputType"
+    [formControl]="control"
+    [placeholder]="placeholder"
+    [ngClass]="{
+      'input-error': showErrors(),
+      'input-success': showSuccess()
+    }"
+  />
+
+  <textarea
+    *ngIf="controlType === 'textarea'"
+    [formControl]="control"
+  ></textarea>
+
+  <div *ngIf="showSuccess() && !showPasswordNotMatching()" class="msg">
+    <img src="../../../assets/icons/checked-icon.svg" alt="checked" />
+    <p>Correct</p>
+  </div>
+
+  <div *ngIf="showErrors() && !showPasswordNotMatching()" class="msg">
+    <img src="../../../assets/icons/error-icon.svg" alt="error" />
+    <div>
+      <p *ngIf="control.errors.required">Value is required</p>
+      <p *ngIf="control.errors.email">Enter a valid email</p>
+      <p *ngIf="control.errors.minlength">
+        Value you enterd is
+        {{ control.errors.minlength.actualLength }} characters long, but it must
+        be at least {{ control.errors.minlength.requiredLength }} characters
+      </p>
+      <p *ngIf="control.errors.maxlength">
+        Value you enterd is
+        {{ control.errors.maxlength.actualLength }} characters long, bit it
+        cannot be longer than
+        {{ control.errors.maxlength.requiredLength }} characters
+      </p>
+      <p *ngIf="control.errors.pattern">Invalid format</p>
+      <p *ngIf="control.errors.nonUniqueUsername">Username is taken</p>
+      <p *ngIf="control.errors.noConnection">Can't tell if username is taken</p>
+      <p *ngIf="passwordNotMatching">Passwords don't match</p>
+    </div>
+  </div>
+
+  <div *ngIf="showPasswordNotMatching()" class="msg">
+    <img src="../../../assets/icons/error-icon.svg" alt="error" />
+    <p>Passwords don't match</p>
+  </div>
+</div>

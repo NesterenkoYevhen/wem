@@ -1,0 +1,52 @@
+<div class="signin">
+  <div class="signin-header">
+    <button class="signin-header-back" routerLink="../">
+      <img
+        class="signin-header-back-img"
+        src="../../../../assets/chevron-back.svg"
+        alt="chevron-back"
+      />
+      <div class="signin-header-back-text">Back</div>
+    </button>
+    <div class="signin-header-login">
+      New here?
+      <a routerLink="/auth/signup">Sign up</a>
+    </div>
+  </div>
+  <form class="signin-form" (ngSubmit)="onSubmit()" [formGroup]="signinForm">
+    <h2 class="signin-form-title">Log in</h2>
+    <h3 class="signin-form-subtitle">New here? Sign up</h3>
+    <div class="signin-form-text-inputs">
+      <div class="signin-form-fields">
+        <fieldset class="signin-form-field">
+          <app-input
+            inputType="text"
+            label="Email"
+            [control]="signinForm.get('email')"
+            placeholder="yevhen24@wem.com"
+            inputType="email"
+          ></app-input>
+        </fieldset>
+      </div>
+      <div class="signin-form-fields">
+        <fieldset class="signin-form-field">
+          <app-input
+            inputType="password"
+            label="Create a password"
+            [control]="signinForm.get('password')"
+            placeholder="Enter a password"
+          ></app-input>
+        </fieldset>
+      </div>
+    </div>
+    <div class="sign-up-form-sbmt">
+      <button
+        type="submit"
+        [disabled]="signinForm.invalid"
+        class="btn btn__primary btn__primary--green"
+      >
+        Log in
+      </button>
+    </div>
+  </form>
+</div>

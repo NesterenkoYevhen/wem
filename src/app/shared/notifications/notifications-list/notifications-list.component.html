@@ -1,0 +1,22 @@
+<div
+  *ngFor="let message of messages | async"
+  class="notification"
+  [ngClass]="
+    message.type === 'error' ? 'notification--error' : 'notification--success'
+  "
+>
+  <div class="notification__text">
+    <i
+      *ngIf="message.type === 'success'"
+      class="fa-regular fa-circle-check"
+    ></i>
+    <i
+      *ngIf="message.type === 'error'"
+      class="fa-solid fa-circle-exclamation"
+    ></i>
+    {{ message.text }}
+  </div>
+  <button class="btn-close" (click)="clearMessage(message.id)">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</div>

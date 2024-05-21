@@ -1,1 +1,134 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: 400 16px "Manrope", sans-serif;
+  color: #1d1e26;
+}
+
+body {
+  background-color: #f5f6fa;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+input,
+textarea,
+fieldset,
+span,
+select {
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 87.777778vw; /* 1264/1440 */
+  min-width: 87.777778vw;
+  margin: 0 auto;
+}
+
+.btn {
+  font-size: 16px;
+  font-family: "Manrope";
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn__primary {
+  color: #fff;
+}
+
+.btn__primary--green {
+  background-color: #1c8113;
+  transition: all 0.2s ease-in;
+}
+
+.btn__primary--green:hover {
+  background-color: #129806;
+}
+
+.btn__primary--green:active {
+  background-color: #086600;
+}
+
+.btn__primary--green:disabled {
+  cursor: not-allowed;
+  background-color: #599a53;
+}
+
+.btn__primary--black {
+  font-size: 12px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #323236;
+}
+
+.btn__primary--black:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.btn__secondary {
+  color: #1c8113;
+}
+
+.btn__secondary--green {
+  background-color: transparent;
+  border: 1px solid #1c8113;
+  transition: all 0.2s ease-in;
+}
+
+.btn__secondary--green:hover {
+  color: #129806;
+  border-color: #129806;
+}
+
+.btn__secondary--green:active {
+  color: #086600;
+  border-color: #086600;
+}
+
+.btn__secondary--green:disabled {
+  color: #686970;
+  border-color: #686970;
+}

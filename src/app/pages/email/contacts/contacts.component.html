@@ -1,0 +1,23 @@
+<div class="contacts">
+  <h1 class="contacts-title">Contacts ({{ users?.length }})</h1>
+  <div class="contacts-table-container">
+    <table class="contacts-table">
+      <thead>
+        <tr>
+          <td>FULLNAME</td>
+          <td>EMAIL</td>
+          <td>USERNAME</td>
+          <td>GENDER</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.fullname }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.gender }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

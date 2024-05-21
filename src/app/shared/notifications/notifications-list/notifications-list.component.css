@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  position: fixed;
+  top: 90px;
+  right: 16px;
+  width: 550px;
+  z-index: 999999999;
+}
+
+.notification {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  padding: 12px 18px;
+  color: #6c6f80;
+  font-size: 0.875rem;
+}
+
+.notification > .notification__text > i {
+  font-size: 1.25rem;
+  margin-right: 10px;
+}
+
+.notification__text {
+  display: flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+
+.btn-close {
+  font-size: 0.875rem;
+  color: #6c6f80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notification--success {
+  border-left: 6px solid #77b300;
+  background-color: #ebf3d8;
+}
+
+.notification--success > .notification__text > i {
+  color: #88cc00;
+}
+
+.notification--error {
+  border-left: 6px solid #e54322;
+  background-color: #faded9;
+}
+
+.notification--error > .notification__text > i {
+  color: #e54322;
+}
