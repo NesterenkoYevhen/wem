@@ -160,3 +160,5 @@ Year: 2022
 Developed as part of a coursework project:  
 > “Research of reactive programming principles using Angular and RxJS for developing a web-based email service” —  
 > Lviv National University, Faculty of Electronics and Computer Technologies, 2022.
+
+**Thesis Document:** **[Link](https://drive.google.com/file/d/1p58pT2EClgE_i8R41dyw7e1yuU-ir3MC/view?usp=drive_link)**
